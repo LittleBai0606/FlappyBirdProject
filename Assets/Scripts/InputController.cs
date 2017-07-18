@@ -9,7 +9,7 @@ namespace Assets.Scripts
     public class InputController:MonoBehaviour
     {
         //是否触发tab事件
-        public bool Enable { get; set; }
+        public bool CanTab { get; set; }
         
         //点击事件
         public event Action OnTab = null;

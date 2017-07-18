@@ -39,13 +39,15 @@ public class Game : MonoBehaviour {
     public GameUI gameUI= null;
     public Bird bird = null;
     public Background background = null;
+    public InputController inputController = null;
     #endregion
     // Use this for initialization
     void Start ()
     {
         //监听
         onStateChanged += Game_OnStateChanged;
-
+        inputController.OnTab += InputController_OnTab;
+        bird.OnDead += Bird_OnDead;
         //初始进入Init
         GotoInit();
     }
@@ -76,27 +78,50 @@ public class Game : MonoBehaviour {
         {
                 case GameState.Init:
                     bird.IsVisible = false;
+                    bird.UseGravity = false;
+                    inputController.CanTab = false;
                     background.RandomShow();
                     gameUI.UpdateUI(state);
                     break;
                 case GameState.Ready:
                     bird.IsVisible = true;
+                    bird.UseGravity = false;
+                    inputController.CanTab = true;
                     background.RandomShow();
                     gameUI.UpdateUI(state);
                     break;
                 case GameState.Play:
                     bird.IsVisible = true;
+                    bird.UseGravity = true;
+                    inputController.CanTab = true;
                     gameUI.UpdateUI(state);
                     break;
                 case GameState.Over:
                     bird.IsVisible = false;
+                    bird.UseGravity = true;
+                    inputController.CanTab = false;
                     gameUI.UpdateUI(state);
                     break;
         }
     }
+    void InputController_OnTab()
+    {
+        //状态切换， Ready ----> Play
+        if (this.GameState == GameState.Ready)
+        {
+            GotoPlay();
+        }
+        //小鸟跳跃
+        bird.Jump();
+    }
+
+    private void Bird_OnDead()
+    {
+        GotoOver();
+    }
 
     // Update is called once per frame
-	void Update () {
+    void Update () {
 		
 	}
 }
