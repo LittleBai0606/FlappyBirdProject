@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Bird : MonoBehaviour
 {
     //跳跃的速度
-    public float JumpSpeed = 8f;
+    public float JumpSpeed = 5f;
 
     private BoxCollider2D colider;
 
@@ -18,12 +18,6 @@ public class Bird : MonoBehaviour
         set { GetComponent<Rigidbody2D>().gravityScale = value ? 1 : 0; }
     }
 
-    public bool IsVisble
-    {
-        get { return gameObject.activeSelf; }
-        set { gameObject.SetActive(value);}
-    }
-
     //穿过事件
     public event Action OnHit;
 
@@ -31,7 +25,7 @@ public class Bird : MonoBehaviour
     public event Action OnDead;
 
     //默认位置
-    private Vector3 DefaultPosition;
+    internal Vector3 DefaultPosition;
 
     void Awake()
     {
@@ -81,6 +75,7 @@ public class Bird : MonoBehaviour
         //还原
         this.transform.position = DefaultPosition;
         rigid.velocity = Vector3.zero;
+        IsVisible = true;
         //禁用重力
         UseGravity = false;
         //重播动画

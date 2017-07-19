@@ -40,6 +40,7 @@ public class Game : MonoBehaviour {
     public Bird bird = null;
     public Background background = null;
     public InputController inputController = null;
+    public ObstacleLoop obstacleLoop = null;
     #endregion
     // Use this for initialization
     void Start ()
@@ -80,13 +81,17 @@ public class Game : MonoBehaviour {
                     bird.IsVisible = false;
                     bird.UseGravity = false;
                     inputController.CanTab = false;
+                    obstacleLoop.IsMove = true;
+                    obstacleLoop.SetPipesVisible(false);
+                    obstacleLoop.Reset();
                     background.RandomShow();
                     gameUI.UpdateUI(state);
                     break;
                 case GameState.Ready:
-                    bird.IsVisible = true;
-                    bird.UseGravity = false;
+                    bird.Reset();
                     inputController.CanTab = true;
+                    obstacleLoop.IsMove = true;
+                    obstacleLoop.SetPipesVisible(false);
                     background.RandomShow();
                     gameUI.UpdateUI(state);
                     break;
@@ -94,12 +99,16 @@ public class Game : MonoBehaviour {
                     bird.IsVisible = true;
                     bird.UseGravity = true;
                     inputController.CanTab = true;
+                    obstacleLoop.IsMove = true;
+                    obstacleLoop.IsShowPipes = true;
                     gameUI.UpdateUI(state);
                     break;
                 case GameState.Over:
                     bird.IsVisible = false;
                     bird.UseGravity = true;
                     inputController.CanTab = false;
+                    obstacleLoop.IsMove = false;
+                    obstacleLoop.IsShowPipes = false;
                     gameUI.UpdateUI(state);
                     break;
         }
