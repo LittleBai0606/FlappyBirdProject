@@ -28,10 +28,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -14
-      width: 12
-      height: 14
-    advance: 12
+      y: -28
+      width: 24
+      height: 28
+    advance: 24
     flipped: 0
   - serializedVersion: 2
     index: 48
@@ -44,10 +44,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -14
-      width: 12
-      height: 14
-    advance: 12
+      y: -28
+      width: 24
+      height: 28
+    advance: 24
     flipped: 0
   - serializedVersion: 2
     index: 49
@@ -60,10 +60,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -14
-      width: 12
-      height: 14
-    advance: 12
+      y: -28
+      width: 24
+      height: 28
+    advance: 24
     flipped: 0
   - serializedVersion: 2
     index: 50
@@ -76,10 +76,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -14
-      width: 12
-      height: 14
-    advance: 12
+      y: -28
+      width: 24
+      height: 28
+    advance: 24
     flipped: 0
   - serializedVersion: 2
     index: 51
@@ -92,10 +92,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -14
-      width: 12
-      height: 14
-    advance: 12
+      y: -28
+      width: 24
+      height: 28
+    advance: 24
     flipped: 0
   - serializedVersion: 2
     index: 52
@@ -108,10 +108,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -14
-      width: 12
-      height: 14
-    advance: 12
+      y: -28
+      width: 24
+      height: 28
+    advance: 24
     flipped: 0
   - serializedVersion: 2
     index: 53
@@ -124,10 +124,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -14
-      width: 12
-      height: 14
-    advance: 12
+      y: -28
+      width: 24
+      height: 28
+    advance: 24
     flipped: 0
   - serializedVersion: 2
     index: 54
@@ -140,10 +140,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -14
-      width: 12
-      height: 14
-    advance: 12
+      y: -28
+      width: 24
+      height: 28
+    advance: 24
     flipped: 0
   - serializedVersion: 2
     index: 55
@@ -156,10 +156,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -14
-      width: 12
-      height: 14
-    advance: 12
+      y: -28
+      width: 24
+      height: 28
+    advance: 24
     flipped: 0
   - serializedVersion: 2
     index: 56
@@ -172,10 +172,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -14
-      width: 12
-      height: 14
-    advance: 12
+      y: -28
+      width: 24
+      height: 28
+    advance: 24
     flipped: 0
   - serializedVersion: 2
     index: 57
@@ -188,10 +188,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -14
-      width: 12
-      height: 14
-    advance: 12
+      y: -28
+      width: 24
+      height: 28
+    advance: 24
     flipped: 0
   m_KerningValues: []
   m_PixelScale: 0.1

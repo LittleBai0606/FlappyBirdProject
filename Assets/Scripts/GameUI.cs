@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
@@ -59,5 +60,10 @@ public class GameUI : MonoBehaviour
 
             default:break;
         }
+    }
+
+    public void UpdateScore(int score)
+    {
+        this.Score.GetComponent<Text>().text = score.ToString();
     }
 }

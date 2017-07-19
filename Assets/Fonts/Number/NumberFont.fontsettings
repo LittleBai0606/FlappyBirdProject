@@ -28,10 +28,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 49
@@ -44,10 +44,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 16
-      height: 44
-    advance: 16
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 50
@@ -60,10 +60,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 51
@@ -76,10 +76,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 52
@@ -92,10 +92,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 53
@@ -108,10 +108,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 54
@@ -124,10 +124,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 55
@@ -140,10 +140,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 56
@@ -156,10 +156,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 57
@@ -172,10 +172,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 57
@@ -188,10 +188,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 57
@@ -204,10 +204,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 57
@@ -220,10 +220,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 57
@@ -236,10 +236,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 57
@@ -252,10 +252,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 57
@@ -268,10 +268,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 57
@@ -284,10 +284,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 57
@@ -300,10 +300,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 57
@@ -316,10 +316,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   - serializedVersion: 2
     index: 57
@@ -332,10 +332,10 @@ Font:
     vert:
       serializedVersion: 2
       x: 0
-      y: -44
-      width: 24
-      height: 44
-    advance: 24
+      y: -88
+      width: 48
+      height: 88
+    advance: 48
     flipped: 0
   m_KerningValues: []
   m_PixelScale: 0.1

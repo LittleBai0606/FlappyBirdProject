@@ -31,6 +31,7 @@ public class Bird : MonoBehaviour
     {
         //记录小鸟初始位置(世界位置)
         DefaultPosition = this.transform.position;
+       
 
         //监听死亡事件
         OnDead += Bird_OnDead;
@@ -39,13 +40,10 @@ public class Bird : MonoBehaviour
     void Start()
     {
         colider = GetComponent<BoxCollider2D>();
+        Rigidbody2D rigid = GetComponent<Rigidbody2D>();
     }
     
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("碰到东西了");
-        if (Game.Instance.GameState == GameState.Play && OnDead != null) { OnDead(); }
-    }
+    
     void Update()
     {
 
@@ -75,6 +73,7 @@ public class Bird : MonoBehaviour
         //还原
         this.transform.position = DefaultPosition;
         rigid.velocity = Vector3.zero;
+        this.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
         IsVisible = true;
         //禁用重力
         UseGravity = false;
@@ -82,9 +81,35 @@ public class Bird : MonoBehaviour
         GetComponent<Animator>().enabled = true;
     }
 
+   /* void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("碰到东西了");
+        if (Game.Instance.GameState == GameState.Play && OnDead != null) { OnDead(); }
+    }*/
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (Game.Instance.GameState != GameState.Play)
+            return;
+        string tag = collision.transform.tag;
+        if (tag == "Land" || tag == "Pipe" || tag == "Border")
+        {
+            Debug.Log("碰到" + tag + "了");
+            if(OnDead != null)
+                OnDead();
+        }
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(Game.Instance.GameState != GameState.Play)
+            return;
+        GameObject gap = collision.gameObject;
+        if (gap.tag == "Gap")
+        {
+            Debug.Log("通过了!");
+            if (OnHit != null)
+                OnHit();
+        }
     }
 
     private void Bird_OnDead()

@@ -41,6 +41,7 @@ public class Game : MonoBehaviour {
     public Background background = null;
     public InputController inputController = null;
     public ObstacleLoop obstacleLoop = null;
+    public Saver saver = null;
     #endregion
     // Use this for initialization
     void Start ()
@@ -49,6 +50,8 @@ public class Game : MonoBehaviour {
         onStateChanged += Game_OnStateChanged;
         inputController.OnTab += InputController_OnTab;
         bird.OnDead += Bird_OnDead;
+        bird.OnHit += Bird_OnHit;
+        saver.OnScoreChanged += Saver_OnScoreChanged;
         //初始进入Init
         GotoInit();
     }
@@ -78,16 +81,18 @@ public class Game : MonoBehaviour {
         switch (state)
         {
                 case GameState.Init:
+                    saver.Score = 0;
                     bird.IsVisible = false;
                     bird.UseGravity = false;
                     inputController.CanTab = false;
                     obstacleLoop.IsMove = true;
                     obstacleLoop.SetPipesVisible(false);
-                    obstacleLoop.Reset();
+                    obstacleLoop.Restore();
                     background.RandomShow();
                     gameUI.UpdateUI(state);
                     break;
                 case GameState.Ready:
+                    saver.Score = 0;
                     bird.Reset();
                     inputController.CanTab = true;
                     obstacleLoop.IsMove = true;
@@ -129,8 +134,14 @@ public class Game : MonoBehaviour {
         GotoOver();
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    private void Bird_OnHit()
+    {
+        saver.Score++;
+    }
+
+    private void Saver_OnScoreChanged(int score)
+    {
+        gameUI.UpdateScore(score);
+    }
+
 }
