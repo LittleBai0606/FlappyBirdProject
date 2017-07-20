@@ -21,6 +21,8 @@ public class Game : MonoBehaviour {
     public event Action<GameState> onStateChanged;
     #region 变量
 
+    //是否第一次进入Init
+    private bool m_FirstEnterInit= true;
     GameState m_State = GameState.Init;
     public GameState GameState
     {
@@ -42,6 +44,7 @@ public class Game : MonoBehaviour {
     public InputController inputController = null;
     public ObstacleLoop obstacleLoop = null;
     public Saver saver = null;
+    public Sound sound = null;
     #endregion
     // Use this for initialization
     void Start ()
@@ -49,8 +52,10 @@ public class Game : MonoBehaviour {
         //监听
         onStateChanged += Game_OnStateChanged;
         inputController.OnTab += InputController_OnTab;
+
         bird.OnDead += Bird_OnDead;
         bird.OnHit += Bird_OnHit;
+
         saver.OnScoreChanged += Saver_OnScoreChanged;
         //初始进入Init
         GotoInit();
@@ -88,16 +93,23 @@ public class Game : MonoBehaviour {
                     obstacleLoop.IsMove = true;
                     obstacleLoop.SetPipesVisible(false);
                     obstacleLoop.Restore();
-                    background.RandomShow();
                     gameUI.UpdateUI(state);
+                    if (!m_FirstEnterInit)
+                    {
+                    background.RandomShow();
+                    }
+                    else
+                    {
+                    m_FirstEnterInit = false;
+                    }
                     break;
                 case GameState.Ready:
-                    saver.Score = 0;
+                    saver.Reset();
                     bird.Reset();
                     inputController.CanTab = true;
                     obstacleLoop.IsMove = true;
                     obstacleLoop.SetPipesVisible(false);
-                    background.RandomShow();
+                    //background.RandomShow();
                     gameUI.UpdateUI(state);
                     break;
                 case GameState.Play:
@@ -115,6 +127,7 @@ public class Game : MonoBehaviour {
                     obstacleLoop.IsMove = false;
                     obstacleLoop.IsShowPipes = false;
                     gameUI.UpdateUI(state);
+                    gameUI.UpdateResult(saver.Score, saver.Best, saver.NewBest);
                     break;
         }
     }
@@ -125,18 +138,28 @@ public class Game : MonoBehaviour {
         {
             GotoPlay();
         }
+        if (this.GameState == GameState.Init)
+        {
+            sound.Play("sfx_wing");
+        }
         //小鸟跳跃
         bird.Jump();
+
+        //播放声音
+        
     }
 
     private void Bird_OnDead()
     {
         GotoOver();
+
+        sound.Play("sfx_hit");
     }
 
     private void Bird_OnHit()
     {
         saver.Score++;
+        sound.Play("sfx_point");
     }
 
     private void Saver_OnScoreChanged(int score)
